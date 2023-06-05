@@ -1,25 +1,17 @@
-# typescript-boilerplate
-Typescript and Node boilerplate template developer ready 🚀 to get started quickly with all basic tools included and configured.
+# codewars-typescript-boilerplate
+Typescript and Javascript exercises at Codewars.
 
 
-## 🧑‍🔬 Basic tools included and preconfigured to be used
-- [Typescript 4](https://www.typescriptlang.org/)
-- [Jest 29](https://jestjs.io/docs/getting-started) testing
-- Type definitions for Node.js and Jest
-- Preconfigured [scripts](#scripts-configured) for common operations
-- Documentation generator [Typedoc](http://typedoc.org/)
-- Linting with [ESLint 7](https://eslint.org/)
-- [.editorconfig](https://editorconfig.org/) settings for consistent file format
-- CHANGELOG generator [auto-changelog](https://github.com/cookpete/auto-changelog)
-- 🔖 Available under the MIT license.
 
+## 🧑‍🔬 Boilerplate used
+- [Typescript boilerplate](https://github.com/franciscomesa/typescript-boilerplate)
 
 ## Fast start
 This project is designed to be used with the latest LTS version of Node.js.
 
 Clone the repository:
 ```bash
-git clone https://github.com/franciscomesa/typescript-boilerplate.git your_local_project_name
+git clone https://github.com/franciscomesa/codewars-typescript your_local_project_name
 
 cd your_local_project_name
 ```
@@ -45,8 +37,3 @@ Test your installation with preconfigured test and script
 - `docs:generate`: generate CHANGELOG and documentation in Markdown format
 - `docs:update`: generate CHANGELOG and documentation in Markdown format and commit changelog
 - `docs:generate:html`: generate CHANGELOG and documentation in HTML format
-
-## Next steps
-- Remove unused settings in config files.
-- Include GitHub Actions / GitLab CI
-
