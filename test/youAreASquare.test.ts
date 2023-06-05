@@ -33,6 +33,14 @@ describe('You\'re a square!', () => {
     expect(result).toBeFalsy()
   })
 
+  it('Zero number is square', () => {
+    const zeroNumber = 0
+
+    const result = isSquare(zeroNumber)
+
+    expect(result).toBeTruthy()
+  })
+
 })
 
 function isSquare(square: number): boolean {
