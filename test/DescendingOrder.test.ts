@@ -32,4 +32,13 @@ describe('Descending order training', () => {
     expect(result).toBe(54)
   })
 
+  it('descendingOrder with two digits return the same number if digits are sorted', () => {
+    const number = 43
+
+    const result = descendingOrder(number)
+
+    expect(result).toBe(43)
+  })
+
+
 })
