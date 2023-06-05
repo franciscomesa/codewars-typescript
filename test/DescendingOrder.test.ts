@@ -1,7 +1,8 @@
 function descendingOrder(nonNegativeInteger: number) {
   const getDigits = Array.from(nonNegativeInteger.toString())
+  const descendingSortDigits = (numberA: string, numberB: string) => parseInt(numberB) - parseInt(numberA)
 
-  return parseInt(getDigits.sort().reverse().join(''))
+  return parseInt(getDigits.sort(descendingSortDigits).join(''))
 }
 
 describe('Descending order training', () => {
