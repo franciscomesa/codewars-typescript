@@ -35,6 +35,9 @@ describe('You\'re a square!', () => {
 
 })
 
-function isSquare(negativeNumber: number): boolean {
+function isSquare(square: number): boolean {
+  if (square < 0)
+    return false
+
   return true
 }
