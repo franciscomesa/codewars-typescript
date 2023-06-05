@@ -49,7 +49,7 @@ describe('You\'re a square!', () => {
     expect(result).toBeFalsy()
   })
 
-  it('Number 4 is not square', () => {
+  it('Number 4 is square', () => {
     const testNumber = 4
 
     const result = isSquare(testNumber)
@@ -79,6 +79,6 @@ function isSquare(square: number): boolean {
   if (square < 0) {
     return false
   }
-  const tested = Math.sqrt(square)
-  return tested * tested === square
+  const integerSquareRoot = Math.floor(Math.sqrt(square))
+  return integerSquareRoot * integerSquareRoot === square
 }
