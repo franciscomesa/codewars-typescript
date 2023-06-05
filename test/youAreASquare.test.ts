@@ -79,15 +79,6 @@ function isSquare(square: number): boolean {
   if (square < 0) {
     return false
   }
-
-  let tested = 0
-  let testedSquare
-  do {
-    testedSquare = tested * tested;
-    if (testedSquare === square)
-      return true
-    tested = tested + 1
-  } while (testedSquare <= square)
-
-  return false
+  const tested = Math.sqrt(square)
+  return tested * tested === square
 }
