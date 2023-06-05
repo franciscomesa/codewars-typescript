@@ -1,5 +1,13 @@
 function descendingOrder(number: number) {
-  return number
+  const getDigits = Array.from(number.toString())
+
+  if(getDigits.length === 1)
+    return number
+
+  if (getDigits[0] > getDigits[1])
+    return number
+
+  return parseInt(getDigits[1] + getDigits[0])
 }
 
 describe('Descending order training', () => {
