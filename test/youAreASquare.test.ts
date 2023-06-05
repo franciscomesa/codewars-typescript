@@ -52,8 +52,18 @@ describe('You\'re a square!', () => {
 })
 
 function isSquare(square: number): boolean {
-  if (square < 0)
+  if (square < 0) {
     return false
+  }
 
-  return true
+  let tested = 0
+  let testedSquare
+  do {
+    testedSquare = tested * tested;
+    if (testedSquare === square)
+      return true
+    tested = tested + 1
+  } while (testedSquare <= square)
+
+  return false
 }
