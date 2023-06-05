@@ -76,9 +76,7 @@ describe('You\'re a square!', () => {
 })
 
 function isSquare(square: number): boolean {
-  if (square < 0) {
-    return false
-  }
-  const integerSquareRoot = Math.floor(Math.sqrt(square))
-  return integerSquareRoot * integerSquareRoot === square
+  // Math.sqrt return NaN is square is negative
+  // If sqrt is not integer => square is not a square number
+  return Number.isInteger(Math.sqrt(square))
 }
