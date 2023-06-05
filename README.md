@@ -24,6 +24,9 @@ Test your installation with preconfigured test and script
 
 💪 Ready for code!
 
+## Typescript Katas
+- [Descending order digits](test%2FdescendingOrder.test.ts)
+- [You are a square number, my friend](test%2FyouAreASquare.test.ts)
 
 ## Scripts configured
 - `start`: run de default script
