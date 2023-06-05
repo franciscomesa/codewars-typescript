@@ -1,13 +1,7 @@
 function descendingOrder(number: number) {
   const getDigits = Array.from(number.toString())
 
-  if(getDigits.length === 1)
-    return number
-
-  if (getDigits[0] > getDigits[1])
-    return number
-
-  return parseInt(getDigits[1] + getDigits[0])
+  return parseInt(getDigits.sort().reverse().join(''))
 }
 
 describe('Descending order training', () => {
@@ -40,5 +34,38 @@ describe('Descending order training', () => {
     expect(result).toBe(43)
   })
 
+  it('descendingOrder with three or more digits return the highest possible number', () => {
+    const number = 456
+
+    const result = descendingOrder(number)
+
+    expect(result).toBe(654)
+  })
+
+  describe('Codewars tests', () => {
+    it('descendingOrder with 42145', () => {
+      const number = 42145
+
+      const result = descendingOrder(number)
+
+      expect(result).toBe(54421)
+    })
+
+    it('descendingOrder with 145263', () => {
+      const number = 145263
+
+      const result = descendingOrder(number)
+
+      expect(result).toBe(654321)
+    })
+
+    it('descendingOrder with 123456789', () => {
+      const number = 123456789
+
+      const result = descendingOrder(number)
+
+      expect(result).toBe(987654321)
+    })
+  })
 
 })
