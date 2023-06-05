@@ -1,5 +1,5 @@
-function descendingOrder(number: number) {
-  const getDigits = Array.from(number.toString())
+function descendingOrder(nonNegativeInteger: number) {
+  const getDigits = Array.from(nonNegativeInteger.toString())
 
   return parseInt(getDigits.sort().reverse().join(''))
 }
