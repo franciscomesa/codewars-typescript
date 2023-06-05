@@ -42,9 +42,33 @@ describe('You\'re a square!', () => {
   })
 
   it('Three number is not square', () => {
-    const threeNumber = 3
+    const testNumber = 3
 
-    const result = isSquare(threeNumber)
+    const result = isSquare(testNumber)
+
+    expect(result).toBeFalsy()
+  })
+
+  it('Number 4 is not square', () => {
+    const testNumber = 4
+
+    const result = isSquare(testNumber)
+
+    expect(result).toBeTruthy()
+  })
+
+  it('Number 25 is square', () => {
+    const testNumber = 25
+
+    const result = isSquare(testNumber)
+
+    expect(result).toBeTruthy()
+  })
+
+  it('Number 26 is not square', () => {
+    const testNumber = 26
+
+    const result = isSquare(testNumber)
 
     expect(result).toBeFalsy()
   })
