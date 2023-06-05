@@ -16,4 +16,12 @@ describe('Descending order training', () => {
     expect(result).toBe(number)
   })
 
+  it('descendingOrder with two digits return the highest possible number', () => {
+    const number = 45
+
+    const result = descendingOrder(number)
+
+    expect(result).toBe(54)
+  })
+
 })
