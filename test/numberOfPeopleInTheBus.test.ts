@@ -1,5 +1,7 @@
 function numberOfPeopleInTheBus(busStops: [number, number][]): number {
-  // Your Code
+  if (busStops.length === 0) {
+    return 0
+  }
 
   return NaN
 }
