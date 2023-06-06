@@ -1,4 +1,6 @@
-function numberOfPeopleInTheBus(busStops: [number, number][]): number {
+type GetOnGetOff = [number, number];
+type GetsOnGetsOff = GetOnGetOff[];
+function numberOfPeopleInTheBus(busStops: GetsOnGetsOff): number {
   if (busStops.length === 0) {
     return 0
   }
@@ -24,7 +26,7 @@ describe('Number of people in the bus', () => {
    */
 
   it('Zero people in bus without bus stops', () => {
-    const emptyBusAtBeginning: [number, number][] = []
+    const emptyBusAtBeginning: GetsOnGetsOff = []
 
     const result = numberOfPeopleInTheBus(emptyBusAtBeginning)
 
