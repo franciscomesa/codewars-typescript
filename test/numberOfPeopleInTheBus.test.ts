@@ -4,8 +4,7 @@ function numberOfPeopleInTheBus(busStops: GetsOnGetsOff): number {
   if (busStops.length === 0) {
     return 0
   }
-  const resultReduceAndMap = busStops.reduce((numberOfPeople, [on, off]) => numberOfPeople+on-off, 0)
-  return resultReduceAndMap
+  return busStops.reduce((numberOfPeople, [on, off]) => numberOfPeople + on - off, 0)
 
 }
 describe('Number of people in the bus', () => {
