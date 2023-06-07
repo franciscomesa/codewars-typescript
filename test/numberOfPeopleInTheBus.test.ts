@@ -4,8 +4,8 @@ function numberOfPeopleInTheBus(busStops: GetsOnGetsOff): number {
   if (busStops.length === 0) {
     return 0
   }
-  const resultWithMap = busStops.map(busStop => busStop[0]- busStop[1])
-  return resultWithMap.reduce((partial, current) => partial+current, 0)
+  const resultWithMap = busStops.map(busStop => busStop[0] - busStop[1])
+  return resultWithMap.reduce((partial, current) => partial + current, 0)
 }
 describe('Number of people in the bus', () => {
   // https://www.codewars.com/kata/5648b12ce68d9daa6b000099
