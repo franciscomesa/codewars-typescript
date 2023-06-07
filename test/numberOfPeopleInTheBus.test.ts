@@ -32,4 +32,12 @@ describe('Number of people in the bus', () => {
 
     expect(result).toBe(0)
   })
+
+  it('There could be at least one person at last bus stop', () => {
+    const emptyBusAtBeginning: GetsOnGetsOff = [[3, 0]]
+
+    const result = numberOfPeopleInTheBus(emptyBusAtBeginning)
+
+    expect(result).toBe(3)
+  })
 })
