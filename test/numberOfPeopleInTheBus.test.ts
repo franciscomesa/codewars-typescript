@@ -4,9 +4,13 @@ function numberOfPeopleInTheBus(busStops: GetsOnGetsOff): number {
   if (busStops.length === 0) {
     return 0
   }
-  let numberOfPeople = 0
-  busStops.forEach(busStop => numberOfPeople = numberOfPeople + busStop[0] - busStop[1])
-  return numberOfPeople
+
+  const result = busStops.reduce(
+    (result, current) => [result[0]+current[0], result[1]+current[1]]
+    , [0, 0]
+  )
+
+  return result[0]-result[1]
 }
 describe('Number of people in the bus', () => {
   // https://www.codewars.com/kata/5648b12ce68d9daa6b000099
