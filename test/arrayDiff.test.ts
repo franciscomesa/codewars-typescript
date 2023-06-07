@@ -21,4 +21,11 @@ describe('Array.diff', () => {
 
     expect(result).toStrictEqual([])
   })
+
+  it ('return an element if is the only in the second array', () => {
+    const result = arrayDiff([3, 4], [3])
+
+    expect(result).toStrictEqual([3])
+  })
+
 })
