@@ -20,4 +20,8 @@ describe('Is this a triangle', () => {
     expect(isTriangle(1, 2, 2)).toBeTruthy()
   })
 
+  it('Lengths of 7, 2, 2 can not built a triangle', () => {
+    expect(isTriangle(7, 2, 2)).toBeFalsy()
+  })
+
 })
