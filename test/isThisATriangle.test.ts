@@ -1,5 +1,8 @@
 function isTriangle(a: number, b: number, c: number): boolean {
-  return false;
+  if (a + b > c && a + c > b && b +c > a)
+    return true
+
+  return false
 }
 
 describe('Is this a triangle', () => {
@@ -16,6 +19,5 @@ describe('Is this a triangle', () => {
   it('Lengths of 1, 2, 2 can built a triangle', () => {
     expect(isTriangle(1, 2, 2)).toBeTruthy()
   })
-
 
 })
