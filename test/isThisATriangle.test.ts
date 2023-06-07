@@ -1,7 +1,5 @@
 function isTriangle(a: number, b: number, c: number): boolean {
   return a + b > c && a + c > b && b + c > a
-
-
 }
 
 describe('Is this a triangle', () => {
