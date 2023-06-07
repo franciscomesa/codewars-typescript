@@ -1,6 +1,6 @@
 
 function arrayDiff(a: number[], b: number[]): number[] {
-  return [NaN]
+  return []
 }
 describe('Array.diff', () => {
   // https://www.codewars.com/kata/523f5d21c841566fde000009/typescript
@@ -19,6 +19,6 @@ describe('Array.diff', () => {
   it ('return empty array if first do not have elements', () => {
     const result = arrayDiff([], [4,5])
 
-    expect(result).toBe([])
+    expect(result).toStrictEqual([])
   })
 })
