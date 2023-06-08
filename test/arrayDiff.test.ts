@@ -31,10 +31,15 @@ describe('Array.diff', () => {
     expect(result).toStrictEqual([])
   })
 
-  it ('return an element if is the only in the second array', () => {
+  it ('return an element if is not the only one in the second array', () => {
     const result = arrayDiff([3, 4], [3])
 
     expect(result).toStrictEqual([4])
   })
 
+  it ('return all elements ordered if is the second array us empty', () => {
+    const result = arrayDiff([1, 8, 2], [])
+
+    expect(result).toStrictEqual([1, 8, 2])
+  })
 })
