@@ -38,6 +38,26 @@ describe ('Disemvowel Trolls', () => {
     expect(Kata.disemvowel('bluff')).toBe('blff')
   })
 
+  it('remove the vowel A', () => {
+    expect(Kata.disemvowel('KATA')).toBe('KT')
+  })
+
+  it('remove the vowel E', () => {
+    expect(Kata.disemvowel('WEB')).toBe('WB')
+  })
+
+  it('remove the vowel I', () => {
+    expect(Kata.disemvowel('THIS')).toBe('THS')
+  })
+
+  it('remove the vowel O', () => {
+    expect(Kata.disemvowel('FOR')).toBe('FR')
+  })
+
+  it('remove the vowel U', () => {
+    expect(Kata.disemvowel('BLUFF')).toBe('BLFF')
+  })
+
   it('do not remove the letter y', () => {
     expect(Kata.disemvowel('yes')).toBe('ys')
   })
