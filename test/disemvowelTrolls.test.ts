@@ -22,4 +22,19 @@ describe ('Disemvowel Trolls', () => {
     expect(Kata.disemvowel('kata')).toBe('kt')
   })
 
+  it('remove the vowel e', () => {
+    expect(Kata.disemvowel('web')).toBe('wb')
+  })
+
+  it('remove the vowel i', () => {
+    expect(Kata.disemvowel('This')).toBe('Ths')
+  })
+
+  it('remove the vowel o', () => {
+    expect(Kata.disemvowel('for')).toBe('fr')
+  })
+
+  it('remove the vowel u', () => {
+    expect(Kata.disemvowel('bluff')).toBe('blff')
+  })
 })
