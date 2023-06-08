@@ -1,14 +1,10 @@
 
 function arrayDiff(a: number[], b: number[]): number[] {
-  const result: number[] = []
-
-  a.forEach(element => {
-    if (!b.includes(element)) {
-      result.push(element)
-    }
-  })
-
-  return result
+  return a.reduce((current: number[], element) => {
+    if (!b.includes(element))
+      current.push(element)
+    return current
+  }, [])
 }
 describe('Array.diff', () => {
   // https://www.codewars.com/kata/523f5d21c841566fde000009/typescript
