@@ -1,6 +1,6 @@
 export class Kata {
   static disemvowel(str: string): string {
-    return str.replace(/a/g, '');
+    return str.replace(/[aeiou]/g, '');
   }
 }
 
