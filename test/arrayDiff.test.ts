@@ -1,9 +1,8 @@
 
 function arrayDiff(a: number[], b: number[]): number[] {
-  const sortedA = a.sort()
   const result: number[] = []
 
-  sortedA.forEach(element => {
+  a.forEach(element => {
     if (!b.includes(element)) {
       result.push(element)
     }
