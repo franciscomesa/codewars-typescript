@@ -41,4 +41,10 @@ describe('Array.diff', () => {
 
     expect(result).toStrictEqual([1, 8, 2])
   })
+
+  it ('return the only one element not present at second array', () => {
+    const result = arrayDiff([1, 2, 3], [1, 2])
+
+    expect(result).toStrictEqual([3])
+  })
 })
