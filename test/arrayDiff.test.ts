@@ -1,6 +1,15 @@
 
 function arrayDiff(a: number[], b: number[]): number[] {
-  return []
+  const sortedA = a.sort()
+  const result: number[] = []
+
+  sortedA.forEach(element => {
+    if (b.includes(element)) {
+      result.push(element)
+    }
+  })
+
+  return result
 }
 describe('Array.diff', () => {
   // https://www.codewars.com/kata/523f5d21c841566fde000009/typescript
