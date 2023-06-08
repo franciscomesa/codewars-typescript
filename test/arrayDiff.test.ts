@@ -4,7 +4,7 @@ function arrayDiff(a: number[], b: number[]): number[] {
   const result: number[] = []
 
   sortedA.forEach(element => {
-    if (b.includes(element)) {
+    if (!b.includes(element)) {
       result.push(element)
     }
   })
@@ -34,7 +34,7 @@ describe('Array.diff', () => {
   it ('return an element if is the only in the second array', () => {
     const result = arrayDiff([3, 4], [3])
 
-    expect(result).toStrictEqual([3])
+    expect(result).toStrictEqual([4])
   })
 
 })
