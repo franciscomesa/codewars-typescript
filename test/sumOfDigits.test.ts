@@ -31,4 +31,15 @@ describe('Sum of Digits / Digital Root', () => {
 
     expect(digitalRoot(twoDigits)).toBe(7)
   })
+
+  it.each([
+    [7, 7],
+    [16, 7],
+    [942, 6],
+    [132189, 6],
+    [403193, 2]
+  ])('return the sum of digits %i', (digits, sumExpected) => {
+    expect(digitalRoot(digits)).toBe(sumExpected)
+  })
+
 })
