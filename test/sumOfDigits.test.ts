@@ -1,7 +1,7 @@
 export const digitalRoot = (n: number): number => {
   const toString = n.toString()
   const toArray = Array.from(toString)
-  let result = toArray
+  const result = toArray
     .map(element => parseInt(element))
     .reduce((partial, element) => partial + element, 0 )
   if (result > 9)
