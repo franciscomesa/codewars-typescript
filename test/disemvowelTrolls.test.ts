@@ -37,4 +37,8 @@ describe ('Disemvowel Trolls', () => {
   it('remove the vowel u', () => {
     expect(Kata.disemvowel('bluff')).toBe('blff')
   })
+
+  it('do not remove the letter y', () => {
+    expect(Kata.disemvowel('yes')).toBe('ys')
+  })
 })
