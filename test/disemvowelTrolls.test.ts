@@ -18,4 +18,8 @@ describe ('Disemvowel Trolls', () => {
     expect(Kata.disemvowel('')).toBe('')
   })
 
+  it('remove the vowel a', () => {
+    expect(Kata.disemvowel('kata')).toBe('kt')
+  })
+
 })
