@@ -1,6 +1,7 @@
-export const digitalRoot = (n:number): number => {
-  return NaN
-};
+export const digitalRoot = (n: number): number => {
+  return n
+}
+
 describe('Sum of Digits / Digital Root', () => {
   // https://www.codewars.com/kata/541c8630095125aba6000c00/typescript
   /*
