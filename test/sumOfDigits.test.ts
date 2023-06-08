@@ -21,4 +21,10 @@ describe('Sum of Digits / Digital Root', () => {
 
     expect(digitalRoot(simpleDigit)).toBe(7)
   })
+
+  it('return the sum of digits with two digits number', () => {
+    const twoDigits = 16
+
+    expect(digitalRoot(twoDigits)).toBe(7)
+  })
 })
