@@ -1,5 +1,7 @@
+import exp = require("constants");
+
 function isValidWalk(walk: string[]) {
-  return false
+  return walk.length === 10
 }
 describe('Take a Ten Minutes Walk', () => {
   // https://www.codewars.com/kata/54da539698b8a2ad76000228/train/typescript
@@ -20,5 +22,23 @@ describe('Take a Ten Minutes Walk', () => {
 
   it('return false if the array is empty', () => {
     expect(isValidWalk([])).toBeFalsy()
+  })
+
+  it.each([
+   [1, false],
+  [2, false],
+  [3, false],
+  [4, false],
+  [5, false],
+  [6, false],
+  [7, false],
+  [8, false],
+  [9, false],
+  [10, true],
+  [11, false]
+    ])('If the array have %i elements, return %s', (numberOfDirections, expected) => {
+      const walking = new Array(numberOfDirections)
+
+      expect(isValidWalk(walking)).toBe(expected)
   })
 })
