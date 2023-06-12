@@ -1,5 +1,3 @@
-import exp = require("constants");
-
 function isValidWalk(walk: string[]) {
   if (walk.length !== 10)
     return false
@@ -21,9 +19,8 @@ function isValidWalk(walk: string[]) {
         break
     }
   })
+  return position.x === 0 && position.y === 0;
 
-  if(position.x === 0 && position.y === 0)
-    return true
 }
 describe('Take a Ten Minutes Walk', () => {
   // https://www.codewars.com/kata/54da539698b8a2ad76000228/train/typescript
@@ -69,4 +66,14 @@ describe('Take a Ten Minutes Walk', () => {
 
     expect(isValidWalk(walking)).toBeTruthy()
   })
+
+  it.each([
+    [['n','s','n','s','n','s','n','s','n','s'], true],
+    [['w','e','w','e','w','e','w','e','w','e','w','e'], false],
+    [['w'], false],
+    [['n','n','n','s','n','s','n','s','n','s'], false]
+  ])('codewars tests cases', (walking, expected) => {
+    expect(isValidWalk(walking)).toBe(expected)
+  })
+
 })
