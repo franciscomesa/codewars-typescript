@@ -5,9 +5,9 @@ export const digitalRoot = (n: number): number => {
   const toArray = Array.from(n.toString())
   return digitalRoot(
     toArray
-    .map(element => parseInt(element))
-    .reduce((partial, element) => partial + element, 0 )
+      .reduce((partial, element) => partial + parseInt(element), 0 )
   )
+
 }
 
 describe('Sum of Digits / Digital Root', () => {
