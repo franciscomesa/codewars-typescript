@@ -1,7 +1,29 @@
 import exp = require("constants");
 
 function isValidWalk(walk: string[]) {
-  return walk.length === 10
+  if (walk.length !== 10)
+    return false
+
+  const position = { x: 0, y: 0 }
+  walk.forEach(direction => {
+    switch (direction) {
+      case 'n':
+        position.y++
+        break
+      case 's':
+        position.y--
+        break
+      case 'e':
+        position.x++
+        break
+      case 'w':
+        position.x--
+        break
+    }
+  })
+
+  if(position.x === 0 && position.y === 0)
+    return true
 }
 describe('Take a Ten Minutes Walk', () => {
   // https://www.codewars.com/kata/54da539698b8a2ad76000228/train/typescript
@@ -40,5 +62,11 @@ describe('Take a Ten Minutes Walk', () => {
       const walking = new Array(numberOfDirections)
 
       expect(isValidWalk(walking)).toBe(expected)
+  })
+
+  it('return false if the walk does not return you to your starting point', () => {
+    const walking = ['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']
+
+    expect(isValidWalk(walking)).toBeTruthy()
   })
 })
