@@ -1,7 +1,6 @@
 function narcissistic(value: number): boolean {
   const digits = value.toString().split('').map(Number) //currying
-  const narcissisticNumber = digits.reduce((partial, element) => partial + Math.pow(element, digits.length), 0)
-  return value === narcissisticNumber
+  return value === digits.reduce((partial, element) => partial + Math.pow(element, digits.length), 0)
 
 }
 
