@@ -25,4 +25,9 @@ describe('Next bigger number with the same digits', () => {
     (toBeRearranged) => {
       expect(nextBigger(toBeRearranged)).toBe(-1)
   })
+
+  it('the number 12 is rearranged as 21',
+    () => {
+      expect(nextBigger(12)).toBe(21)
+    })
 })
