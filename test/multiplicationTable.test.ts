@@ -39,4 +39,16 @@ describe('Multiplication Table', () => {
     expect(result).toStrictEqual([[1]])
   })
 
+  it('return array with four elements if size is 2', () => {
+    const result = multiplicationTable(2)
+
+    expect(result).toStrictEqual([[1, 2], [2, 4]])
+  })
+
+  it('return array with four elements if size is 3', () => {
+    const result = multiplicationTable(3)
+
+    expect(result).toStrictEqual([[1, 2, 3], [2, 4, 6], [3, 6, 9]])
+  })
+
 })
