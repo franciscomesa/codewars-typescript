@@ -39,4 +39,9 @@ describe('Next bigger number with the same digits', () => {
     () => {
       expect(nextBigger(513)).toBe(531)
     })
+
+  it('the number 315 is rearranged as 351',
+    () => {
+      expect(nextBigger(315)).toBe(351)
+    })
 })
