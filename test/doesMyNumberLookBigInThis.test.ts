@@ -1,6 +1,6 @@
 function narcissistic(value: number): boolean {
-  // your code here
-  return false
+  return value === Math.pow(value, 1)
+
 }
 
 describe('Does my (Narcissistic) number look big in this?', () => {
@@ -20,9 +20,11 @@ describe('Does my (Narcissistic) number look big in this?', () => {
    * only valid positive non-zero integers will be passed into the function.
    */
 
-  it('1 is narcissistic', () => {
-    expect(narcissistic(1)).toBeTruthy()
+  it.each([[1],[2],[3],[4],[5],[6],[7],[8],[9]])('One digit number %i is allways narcissistic', (oneDigit) => {
+    expect(narcissistic(oneDigit)).toBeTruthy()
   })
+
+
 
   it('Codewars basic tests', () => {
     expect(narcissistic(7)).toBe(true);
