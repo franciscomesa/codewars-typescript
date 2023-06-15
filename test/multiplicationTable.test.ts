@@ -3,8 +3,9 @@ function multiplicationTable (size: number): number[][] {
     return []
   }
 
-  const table = Array(size).fill(0).map(() => Array(size).fill(0))
+  const table = Array(size)
   for(let i = 0; i < size; i++) {
+    table[i] = Array(size)
     for(let j = 0; j < size; j++) {
       table[i][j] = (i+1) * (j+1)
     }
