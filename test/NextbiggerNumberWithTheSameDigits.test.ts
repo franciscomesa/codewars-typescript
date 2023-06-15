@@ -2,7 +2,11 @@ function nextBigger(n: number): number {
   if (n < 10) {
     return -1
   }
-  return n
+  const unversedSortedDigitsArray = Array.from(n.toString()).sort((a, b) => parseInt(b) - parseInt(a))
+  const biggerNumber = parseInt(unversedSortedDigitsArray.join(''))
+  return n === biggerNumber
+    ? -1
+    : biggerNumber
 }
 describe('Next bigger number with the same digits', () => {
   //https://www.codewars.com/kata/55983863da40caa2c900004e
