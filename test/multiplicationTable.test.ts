@@ -1,5 +1,15 @@
 function multiplicationTable (size: number): number[][] {
-  return []
+  if (size < 1) {
+    return []
+  }
+
+  const table = Array(size).fill(0).map(() => Array(size).fill(0))
+  for(let i = 0; i < size; i++) {
+    for(let j = 0; j < size; j++) {
+      table[i][j] = (i+1) * (j+1)
+    }
+  }
+  return table
 }
 describe('Multiplication Table', () => {
   // https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/typescript
