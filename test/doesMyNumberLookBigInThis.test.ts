@@ -1,5 +1,7 @@
 function narcissistic(value: number): boolean {
-  return value === Math.pow(value, 1)
+  const digits = value.toString().split('').map(Number) //currying
+  const narcissisticNumber = digits.reduce((partial, element) => partial + Math.pow(element, digits.length), 0)
+  return value === narcissisticNumber
 
 }
 
@@ -24,12 +26,14 @@ describe('Does my (Narcissistic) number look big in this?', () => {
     expect(narcissistic(oneDigit)).toBeTruthy()
   })
 
-
+  it('1652 is a not a narcissistic number', () => {
+    expect(narcissistic(1652)).toBeFalsy()
+  })
 
   it('Codewars basic tests', () => {
-    expect(narcissistic(7)).toBe(true);
-    expect(narcissistic(153)).toBe(true);
-    expect(narcissistic(1634)).toBe(true);
+    expect(narcissistic(7)).toBeTruthy()
+    expect(narcissistic(153)).toBeTruthy()
+    expect(narcissistic(1634)).toBeTruthy()
   });
 
 })
