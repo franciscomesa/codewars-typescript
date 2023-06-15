@@ -1,8 +1,11 @@
 function nextBigger(n: number): number {
-  if (n < 10) {
+  const reverseSort = (a: string, b: string) => parseInt(b) - parseInt(a);
+  const unversedSortedDigitsArray = Array.from(n.toString()).sort(reverseSort)
+
+  if (n === parseInt(unversedSortedDigitsArray.join(''))) {
     return -1
   }
-  const unversedSortedDigitsArray = Array.from(n.toString()).sort((a, b) => parseInt(b) - parseInt(a))
+
   const biggerNumber = parseInt(unversedSortedDigitsArray.join(''))
   return n === biggerNumber
     ? -1
