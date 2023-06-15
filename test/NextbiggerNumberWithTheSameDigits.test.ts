@@ -1,4 +1,7 @@
 function nextBigger(n: number): number {
+  if (n < 10) {
+    return -1
+  }
   return n
 }
 describe('Next bigger number with the same digits', () => {
