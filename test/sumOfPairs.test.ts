@@ -1,5 +1,11 @@
 export function sumPairs(ints: number[], s: number): [number, number] | void {
-  return undefined // your code here...
+  if (ints.length > 1) {
+    if (ints[0] + ints[1] === s)
+      return [ints[0], ints[1]]
+  }
+
+  return undefined
+
 }
 describe('Sum of Pairs', () => {
   // https://www.codewars.com/kata/54d81488b981293527000c8f/typescript
@@ -27,7 +33,7 @@ describe('Sum of Pairs', () => {
   })
 
   it('Two elements array returns the same values if it add up', () => {
-    expect(sumPairs([0, 2], 2)).toBe([0, 2])
+    expect(sumPairs([0, 2], 2)).toStrictEqual([0, 2])
   })
 
 
