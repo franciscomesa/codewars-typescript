@@ -1,11 +1,16 @@
 function rot13(str: string): string {
   const upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const lowerCharacters = 'abcdefghijklmnopqrstuvwxyz'
   const characters = new Array(str)
   const result = characters.map(
     (letter) => {
       const upperCharacterIndex = upperCharacters.indexOf(letter)
       if (upperCharacterIndex !== -1) {
         return upperCharacters.charAt((upperCharacterIndex + 13) % 26)
+      }
+      const lowerCharacterIndex = lowerCharacters.indexOf(letter)
+      if (lowerCharacterIndex !== -1) {
+        return lowerCharacters.charAt((lowerCharacterIndex + 13) % 26)
       }
       return letter
     }
@@ -41,10 +46,20 @@ describe('ROT13 algorithm should', () => {
     it('Z', () => {
       expect(rot13('Z')).toBe('M')
     })
-
   })
 
-  it('change Z uppercase caracter', () => {
-    expect(rot13('Z')).toBe('M')
+  describe('change lowercase characters', () => {
+    it('a', () => {
+      expect(rot13('a')).toBe('n')
+    })
+
+    it('n', () => {
+      expect(rot13('n')).toBe('a')
+    })
+
+    it('z', () => {
+      expect(rot13('z')).toBe('m')
+    })
   })
+
 })
