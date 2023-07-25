@@ -1,4 +1,4 @@
-function fixedRot13Algorithm(str: string): string {
+function rot13(str: string): string {
   const sourceCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
   const obfuscatedCharacters = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
 
@@ -13,28 +13,6 @@ function fixedRot13Algorithm(str: string): string {
   return result.join('')
 }
 
-function rot13(str: string): string {
-  return fixedRot13Algorithm(str)
-
-  const upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  const lowerCharacters = 'abcdefghijklmnopqrstuvwxyz'
-
-  const result = str.split('').map(
-    (letter) => {
-      const upperCharacterIndex = upperCharacters.indexOf(letter)
-      if (upperCharacterIndex !== -1) {
-        return upperCharacters.charAt((upperCharacterIndex + 13) % 26)
-      }
-      const lowerCharacterIndex = lowerCharacters.indexOf(letter)
-      if (lowerCharacterIndex !== -1) {
-        return lowerCharacters.charAt((lowerCharacterIndex + 13) % 26)
-      }
-      return letter
-    }
-  )
-
-  return result.join('');
-}
 describe('ROT13 algorithm should', () => {
   // https://www.codewars.com/kata/52223df9e8f98c7aa7000062/train/typescript
   /*
