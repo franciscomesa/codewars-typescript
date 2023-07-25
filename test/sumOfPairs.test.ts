@@ -2,12 +2,16 @@ export function sumPairs(ints: number[], s: number): [number, number] | void {
   if (ints.length < 2)
     return undefined
   let result: [number, number] | void = undefined // TODO Remove variable
+  let secondElementIndex: number
 
   ints.forEach((firstNumber, index) => {
     const splitedInts = Array.from(ints).splice(index + 1)
-    splitedInts.forEach(secondNumber => {
-      if (firstNumber + secondNumber === s)
+    splitedInts.forEach((secondNumber, actualSecondNumberIndex) => {
+      if (firstNumber + secondNumber === s
+        && (secondElementIndex === undefined || secondElementIndex < actualSecondNumberIndex)) {
         result = [firstNumber, secondNumber]
+        secondElementIndex = actualSecondNumberIndex
+      }
     })
   })
 
@@ -60,6 +64,16 @@ describe('Sum of Pairs', () => {
     })
   })
 
+  it('Multiple elements array returns', () => {
+    expect(sumPairs([1, -2, 3, 0, -6, 1], -6)).toStrictEqual([0, -6])
+    expect(sumPairs([1, -2, 3, 0, -6, 1], -7)).toStrictEqual(undefined)
+  })
+
+  describe('return first match', () => {
+    it('Multiple elements array returns', () => {
+      expect(sumPairs([1, 2, 3, 4, 1, 0], 2)).toStrictEqual([1, 1])
+    })
+  })
 
 
 
