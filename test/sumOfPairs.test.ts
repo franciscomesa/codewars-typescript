@@ -22,4 +22,8 @@ describe('Sum of Pairs', () => {
     expect(sumPairs([], 1)).toBe(undefined)
   })
 
+  it('One element array returns undefined', () => {
+    expect(sumPairs([], 1)).toBe(undefined)
+  })
+
 })
