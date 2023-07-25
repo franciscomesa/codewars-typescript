@@ -30,8 +30,8 @@ describe('ROT13 algorithm should', () => {
    * For this task you're only supposed to substitute characters. Not spaces, punctuation, numbers, etc.
    *
    * Test examples:
-   * "EBG13 rknzcyr." -> "ROT13 example."
-   * "This is my first ROT13 excercise!" -> "Guvf vf zl svefg EBG13 rkprepvfr!"
+   * 'EBG13 rknzcyr.' -> 'ROT13 example.'
+   * 'This is my first ROT13 excercise!' -> 'Guvf vf zl svefg EBG13 rkprepvfr!'
    */
 
   describe('change uppercase characters', () => {
@@ -60,6 +60,18 @@ describe('ROT13 algorithm should', () => {
     it('z', () => {
       expect(rot13('z')).toBe('m')
     })
+  })
+
+  describe('Sample tests', () => {
+    it('should work for EBG13 rknzcyr.', () => {
+        expect(rot13('EBG13 rknzcyr.')).toBe('ROT13 example.')
+      }
+    )
+
+    it('should work for This is my first ROT13 excercise!', () => {
+        expect(rot13('This is my first ROT13 excercise!')).toBe('Guvf vf zl svefg EBG13 rkprepvfr!')
+      }
+    )
   })
 
 })
