@@ -16,7 +16,7 @@ function rot13(str: string): string {
     }
   )
 
-  return result.join('').toString();
+  return result.join('');
 }
 describe('ROT13 algorithm should', () => {
   // https://www.codewars.com/kata/52223df9e8f98c7aa7000062/train/typescript
