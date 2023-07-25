@@ -1,4 +1,21 @@
+function fixedRot13Algorithm(str: string): string {
+  const sourceCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+  const obfuscatedCharacters = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
+
+  const result = str.split('').map(
+    (letter) => {
+      const letterIndex = sourceCharacters.indexOf(letter)
+      return letterIndex !== -1
+        ? obfuscatedCharacters.charAt(letterIndex)
+        : letter
+    }
+  )
+  return result.join('')
+}
+
 function rot13(str: string): string {
+  return fixedRot13Algorithm(str)
+
   const upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   const lowerCharacters = 'abcdefghijklmnopqrstuvwxyz'
 
