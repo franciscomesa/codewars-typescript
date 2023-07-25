@@ -29,12 +29,19 @@ describe('ROT13 algorithm should', () => {
    * "This is my first ROT13 excercise!" -> "Guvf vf zl svefg EBG13 rkprepvfr!"
    */
 
-  it('change A uppercase caracter', () => {
-    expect(rot13('A')).toBe('N')
-  })
+  describe('change uppercase characters', () => {
+    it('A', () => {
+      expect(rot13('A')).toBe('N')
+    })
 
-  it('change N uppercase caracter', () => {
-    expect(rot13('N')).toBe('A')
+    it('N', () => {
+      expect(rot13('N')).toBe('A')
+    })
+
+    it('Z', () => {
+      expect(rot13('Z')).toBe('M')
+    })
+
   })
 
   it('change Z uppercase caracter', () => {
