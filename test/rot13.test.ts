@@ -1,7 +1,7 @@
 function rot13(str: string): string {
   const upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   const lowerCharacters = 'abcdefghijklmnopqrstuvwxyz'
-  const characters = new Array(str)
+  const characters = str.split('')
   const result = characters.map(
     (letter) => {
       const upperCharacterIndex = upperCharacters.indexOf(letter)
@@ -16,7 +16,7 @@ function rot13(str: string): string {
     }
   )
 
-  return result.toString();
+  return result.join('').toString();
 }
 describe('ROT13 algorithm should', () => {
   // https://www.codewars.com/kata/52223df9e8f98c7aa7000062/train/typescript
