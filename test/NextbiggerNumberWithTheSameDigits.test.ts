@@ -1,16 +1,32 @@
 function nextBigger(n: number): number {
   const reverseSort = (a: string, b: string) => parseInt(b) - parseInt(a);
-  const unversedSortedDigitsArray = Array.from(n.toString()).sort(reverseSort)
+  const numberToDigits = Array.from(n.toString())
+  const sortedDigits = Array.from(n.toString())
 
-  if (n === parseInt(unversedSortedDigitsArray.join(''))) {
+  if (n === parseInt(sortedDigits.sort(reverseSort).join(''))) {
+    return -1
+  }
+  let biggerThatPreviousOne = -1 //
+  numberToDigits.forEach((digit, index) => {
+    if (index < numberToDigits.length && digit > numberToDigits[index + 1])
+      biggerThatPreviousOne = index + 1
+  })
+
+  let firstBiggerDigit = -1
+
+  numberToDigits.forEach((digit, index) => {
+    if (index > biggerThatPreviousOne && index < numberToDigits.length && digit > numberToDigits[biggerThatPreviousOne])
+      firstBiggerDigit = index
+  })
+
+
+  if (biggerThatPreviousOne === -1) {
     return -1
   }
 
-  const biggerNumber = parseInt(unversedSortedDigitsArray.join(''))
-  return n === biggerNumber
-    ? -1
-    : biggerNumber
+  return  parseInt(sortedDigits.join(''))
 }
+
 describe('Next bigger number with the same digits', () => {
   //https://www.codewars.com/kata/55983863da40caa2c900004e
   /*
