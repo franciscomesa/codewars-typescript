@@ -5,7 +5,6 @@ export function sumPairs(ints: number[], s: number): [number, number] | void {
   }
 
   return undefined
-
 }
 describe('Sum of Pairs', () => {
   // https://www.codewars.com/kata/54d81488b981293527000c8f/typescript
@@ -25,11 +24,11 @@ describe('Sum of Pairs', () => {
    */
 
   it('An empty array returns undefined', () => {
-    expect(sumPairs([], 1)).toBe(undefined)
+    expect(sumPairs([], 1)).toStrictEqual(undefined)
   })
 
   it('One element array returns undefined', () => {
-    expect(sumPairs([], 1)).toBe(undefined)
+    expect(sumPairs([], 1)).toStrictEqual(undefined)
   })
 
   it('Two elements array returns the same values if it add up', () => {
@@ -38,6 +37,10 @@ describe('Sum of Pairs', () => {
 
   it('Two elements array returns undefined if it does not add up', () => {
     expect(sumPairs([0, 3], 2)).toStrictEqual(undefined)
+  })
+
+  it('Three elements array returns undefined if it does not add up', () => {
+    expect(sumPairs([20, -13, 40], 60)).toStrictEqual([20, 40])
   })
 
 
