@@ -1,8 +1,8 @@
 function rot13(str: string): string {
   const upperCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   const lowerCharacters = 'abcdefghijklmnopqrstuvwxyz'
-  const characters = str.split('')
-  const result = characters.map(
+
+  const result = str.split('').map(
     (letter) => {
       const upperCharacterIndex = upperCharacters.indexOf(letter)
       if (upperCharacterIndex !== -1) {
