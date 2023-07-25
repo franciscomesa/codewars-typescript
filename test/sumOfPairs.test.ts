@@ -36,6 +36,10 @@ describe('Sum of Pairs', () => {
     expect(sumPairs([0, 2], 2)).toStrictEqual([0, 2])
   })
 
+  it('Two elements array returns undefined if it does not add up', () => {
+    expect(sumPairs([0, 3], 2)).toStrictEqual(undefined)
+  })
+
 
 
 })
