@@ -26,4 +26,10 @@ describe('Sum of Pairs', () => {
     expect(sumPairs([], 1)).toBe(undefined)
   })
 
+  it('Two elements array returns the same values if it add up', () => {
+    expect(sumPairs([0, 2], 2)).toBe([0, 2])
+  })
+
+
+
 })
